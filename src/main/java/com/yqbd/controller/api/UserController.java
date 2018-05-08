@@ -62,13 +62,11 @@ public class UserController {
         return baseJson;
     }
     @RequestMapping(value = "/register")
-    public BaseJson register(@RequestParam("accountNumber") String accountNumber, @RequestParam("userPassword") String userPassword,
-                          @RequestParam("realName") String realName){
+    public BaseJson register(@RequestParam("accountNumber") String accountNumber, @RequestParam("userPassword") String userPassword){
         BaseJson baseJson = new BaseJson();
         UserInfo userInfo = new UserInfo();
         userInfo.setAccountNumber(accountNumber);
         userInfo.setPassword(userPassword);
-        userInfo.setRealName(realName);
         userInfoMapper.insertSelective(userInfo);
         BaseBean baseBean = new BaseBean();
         int result;

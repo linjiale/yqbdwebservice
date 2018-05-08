@@ -128,8 +128,7 @@
             dataType:"json",
             data:{
                 "accountNumber":account,
-                "userPassword":password,
-                "realName": "realName"
+                "userPassword":password
             },
 
             success:function(data){
