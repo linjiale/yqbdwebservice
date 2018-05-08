@@ -70,6 +70,12 @@ public class WechatController extends BaseController {
         return "wechat_login";
     }
 
+    @RequestMapping(value = "/register")
+    public String register(Map<String, Object> model) {
+        model.put("module", "wechat_index");
+        return "wechat_register";
+    }
+
     private TaskBean parse(Task task) {
         TaskBean taskBean = new TaskBean();
         BeanUtils.copyProperties(task, taskBean);
